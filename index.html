@@ -24,7 +24,7 @@
     <meta property="twitter:description" content="ကျောင်းသားများကို သင်ကြားပေးတဲ့ Bootstrap 5 Project လေးပဲ့ဖြစ်ပါတယ်....">
     <meta property="twitter:image" content="assets/img/bootstrap5.png">
 
-    <link rel="icon" href="https://scrollrevealjs.org/img/logomark.svg">
+    <link rel="icon" href="assets/dh.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -38,6 +38,16 @@
 </head>
 <body>
 
+<div class="loading">
+    <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+    </div>
+</div>
 
 <nav class="navbar shadow-lg navbar-expand-lg navbar-light bg-light border-bottom animate__animated">
     <div class="container">
@@ -739,15 +749,20 @@
 <script src="assets/JS/cus.js"></script>
 <script>
 
-    // ScrollReveal().reveal('.headline',{
-    //     origin: 'bottom',
-    //     distance: '300px',
-    //     duration: 2000,
-    //     reset: true,
-    //     interval: 200,
-    //     scale: 0.80,
-    //     viewFactor: 0.2,
-    // });
+    window.addEventListener('load', _ => {
+        document.querySelector('.loading').style.display = "none";
+    })
+
+
+    ScrollReveal().reveal('.headline',{
+        origin: 'bottom',
+        distance: '300px',
+        duration: 2000,
+        reset: true,
+        interval: 200,
+        scale: 0.80,
+        viewFactor: 0.2,
+    });
 
     $('.portfolio').slick({
         dots: true,
