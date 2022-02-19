@@ -5,14 +5,18 @@ var waypoint = new Waypoint({
             document.querySelector(".navbar").classList.add("navbar-control")
             document.querySelector(".navbar").classList.add("animate__fadeInDown")
             document.querySelector(".navbar").classList.add("shadow-zinc-300")
+            document.querySelector(".logo-bran").classList.add("d-none")
         } else {
             document.querySelector(".navbar").classList.remove("navbar-control")
             document.querySelector(".navbar").classList.remove("animate__fadeInDown")
             document.querySelector(".navbar").classList.remove("shadow-zinc-300")
+            document.querySelector(".logo-bran").classList.remove("d-none")
+
         }
     },
     offset: '5%'
 })
+
 
 
 var waypoint = new Waypoint({
@@ -21,15 +25,19 @@ var waypoint = new Waypoint({
         if (direction === "down") {
             document.querySelector(".footer-fixed").classList.add('show')
             document.querySelector(".footer-fixed").classList.add("animate__fadeInDown")
-            console.log("down")
         } else {
             document.querySelector(".footer-fixed").classList.remove('show')
             document.querySelector(".footer-fixed").classList.remove("animate__fadeInDown")
-            console.log("up")
         }
     },
     offset: '5%'
 })
+
+
+
+function setActive(acc) {
+    $(`.nav-link[href='#${acc}']`).addClass("active")
+}
 
 
 
@@ -41,6 +49,7 @@ let card = document.querySelectorAll('.card');
 const changeThemeToDark = () => {
     document.documentElement.setAttribute('data-theme','dark');
     document.querySelector('.navbar').classList.remove('shadow-lg');
+    document.querySelector('.navbar').classList.add('border-bottom');
     document.querySelector('.navbar').classList.add('pdf-border-zinc-800');
     localStorage.setItem('data-theme','dark');
 

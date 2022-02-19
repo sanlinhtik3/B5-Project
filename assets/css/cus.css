@@ -17,6 +17,9 @@ body {
     background-color: var(--dh-bg-dark);
     color: var(--dh-text-dark);
 }
+.cls-1 {
+    fill: var(--dh-text-dark);
+}
 .navbar {
     background-color: var(--dh-bg-dark) !important;
 }
@@ -44,13 +47,7 @@ body {
 .testimonial-icon {
     margin-top: -50px;
 }
-.slick-next {
-    right: 5px;
-}
-.slick-prev {
-    left: 5px;
-    z-index: 2;
-}
+
 
 .form-map {
     width: 100%;
@@ -127,10 +124,66 @@ body {
     box-shadow: none;
 }
 
+/*Slick */
+.slick-prev::before
+{
+    font-family: "Font Awesome 6 Pro";
+    content: '\2039';
+    font-size: 3rem;
+    color: var(--pdf-red-600);
+}
 
+.slick-next::before
+{
+    font-family: "Font Awesome 6 Pro";
+    content: '\203a';
+    font-size: 3rem;
+    color: var(--pdf-red-600);
+}
 
+.slick-dots {
+    bottom: -50px;
+}
+
+.slick-dots li {
+    width: 10px;
+    height: 10px;
+    background-color: var(--pdf-red-200);
+    border: 2px solid #dc2626;
+    border-radius: 50%;
+}
+
+.slick-dots li.slick-active {
+    background-color: var(--pdf-red-600);
+}
+
+.slick-dots li button:before {
+    display: none;
+}
+
+.pt-8 {
+    padding-top: 8rem!important;
+}
 
 @media screen and (max-width: 768px) {
+    .slick-prev,
+    .slick-next{
+        top: 35%;
+
+    }
+    .slick-prev::before {
+        font-size: 2rem;
+    }
+    .slick-next::before {
+        font-size: 2rem;
+    }
+    .slick-next {
+        right: -15px;
+    }
+    .slick-prev {
+        left: -15px;
+        z-index: 1;
+    }
     .testimonial-icon {
         margin-top: -35px;
     }
